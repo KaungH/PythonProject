@@ -1,0 +1,87 @@
+v=""
+y=['|_', '1', '_|', '|_', '2', '_|', '|_', '3', '_|', '|_', '4', '_|', '|_', '5', '_|', '|_', '6', '_|', '|_', '7', '_|', '|_', '8', '_|', '|_', '9', '_|']
+number=[1,2,3,4,5,6,7,8,9]
+x=0
+for i in range(1,4):
+    print(v.join(y[x:9*i]))
+    x+=9
+def choice(chose):
+    while True:
+        x=0
+        answer=input("Enter the number for placement: ")
+        
+        if int(answer) in range(1,10):
+            
+            for i in range(9):
+                
+                if int(answer)/number[i]==1:
+                    
+                    if i==0 :
+                        
+                        y[i+1]=chose
+                            
+                    else:
+                        
+                        y[i*3+1]=chose
+        elif type(answer)==type(''):
+            print("wrong input")
+            answer=int(input("Enter the number for placement: "))
+        for k in range(1,4):
+            print(v.join(y[x:9*k]))          
+            x+=9
+        print("_______________")
+        break
+
+def winning(one,two):
+    possible_win=[[1,4,7],[10,13,16],[19,22,25],[1,10,19],[4,13,22],[7,16,25],[1,13,25],[7,13,19]]
+    lol=''
+    for win in possible_win:
+        for winner in win:
+            lol+=y[winner]
+        if lol==one*3:
+            print("YOU WIN PLAYER {}".format(choosing1))
+            break
+        if lol ==two*3:
+            print("YOU WIN PLAYER {}".format(choosing2))
+            break
+        lol=''
+
+while True:
+    num=0
+    answer=input("Do you want to play tic-tac-toe with your friend? Type Yes or No: ")
+    if answer in ("Yes","yes","YES"):
+        
+        choosing=input("player one choose X or O: ")
+        choosing1=choosing.capitalize()
+        
+        if choosing1 =="X": 
+            choosing2 ="O"
+            print("*Player 1 is:{} \n*Player 2 is:{}".format(choosing1,choosing2))
+
+        elif choosing1 == "O":
+            choosing2 = "X"
+            print("*Player 1 is:{} \n*Player 2 is:{}".format(choosing1,choosing2))
+        
+        else:
+            print("Choose different answers for different players")
+            continue
+        
+        while num<9:
+            if num>=5:
+                winning(choosing1,choosing2)          
+                    
+            if num%2==0:
+                choice(choosing1)
+                num+=1
+
+            elif num%2!=0: 
+                choice(choosing2)
+                num+=1
+        
+    elif answer in("NO","no","No"):
+        break
+    else:
+        answer=input("Do you want to play tic-tac-toe with your friend. Type Yes or No: ")     
+
+    
+
