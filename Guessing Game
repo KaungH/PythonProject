@@ -1,0 +1,73 @@
+print('This game is about make a guess game. Guess one letter by one letter or whole word. The guesser have 10 attempts at the word')
+
+secret_word= 'a' #make up a secret word
+secret_word=secret_word.lower() #make all characters into lower.case
+
+
+
+incorrect_guesses_left= 10
+print('The secret word has length '+str(len(secret_word)))
+print('You have '+str(incorrect_guesses_left) +' incorrect guesses left.')
+
+while True:
+  guess=input('Guess:')   #player guesses
+  
+  if guess==secret_word:
+    print('That is the correct word!')
+    break
+  
+  elif len(guess)>len(secret_word): #the length of guess is less than secret_word =shows errors
+    incorrect_guesses_left-=1
+    print('That is not a valid guess \nYou have ' +str(incorrect_guesses_left)+' incorrect guesses left.')
+    
+    
+  
+  
+  elif len(guess)== len(secret_word) and secret_word.count(guess)!=guess:    # even tho lengths are same if the characters does not match== shows errors
+    incorrect_guesses_left-=1
+    print('That is not the correct word.') 
+    print('You have ' +str(incorrect_guesses_left)+' incorrect guesses left.')
+  
+  
+  
+  elif len(guess)>=2:   # show errors if length of guess less than or equals to two character. This help with single character counting
+    incorrect_guesses_left-=1
+    print('That is not a valid guess.')
+    print('You have ' +str(incorrect_guesses_left)+' incorrect guesses left.')
+  
+    
+  
+  elif secret_word.count(guess)>=1: #if a single letter was enter and it matches any one letters in secret word, shows no errors and no penalty on player
+    letter_count=secret_word.count(guess)
+    print('That letter is in the word! Count:' +str(letter_count))
+    print('You have ' +str(incorrect_guesses_left)+' incorrect guesses left.')
+  
+  
+  
+  elif secret_word.count(guess)==0:
+    incorrect_guesses_left-=1   #if a single letter was enter and does not match any character in the secret word, shows errors and penalize player.
+    print('That letter is not in the word.')
+    print(' You have ' +str(incorrect_guesses_left)+' incorrect guesses left.' )
+    
+  
+  
+ 
+    
+  
+    
+    
+
+  
+ 
+ 
+
+
+
+
+
+
+ 
+  
+  if incorrect_guesses_left==0: #will not ask user to guess again after attempts 
+    print('You are out of incorrect guesses!')
+    break
