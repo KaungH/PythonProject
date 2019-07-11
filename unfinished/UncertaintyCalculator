@@ -1,0 +1,218 @@
+# import operator
+
+# def get_operator_fn(op):
+#     return {
+#         '+' : operator.add,
+#         '-' : operator.sub,
+#         '*' : operator.mul,
+#         '/' : operator.div,
+#         '%' : operator.mod,
+#         '^' : operator.xor,
+#     }
+
+
+
+
+
+
+
+print('This is a simple uncertainity calculator')
+constant=float(input('Enter constant value:'))
+
+y=float(input('Enter y value:'))
+yPower= float(input('Enter y exponent :'))
+Y= str(y**yPower)
+
+
+yUncert=float(input('Enter your Y Uncertainty:'))
+
+
+
+
+
+
+x=float(input('Enter x value:'))
+xPower= float(input('Enter x exponent :'))
+X= str( x**xPower)
+xUncert=float(input('Enter your X Uncertainty:'))
+
+# function =input('Enter your function, ignore exponent:')
+# if '/' in function:
+#   function.replace('/','{}')
+  
+# function=function.replace('x',X)
+# function = function.replace('y',Y)
+function=input('Enter f for fraction function:')
+if 'f' in function:
+  print('A/B \n do not enter exponent and constant')
+  
+  A=input('Enter variables in numerator:')
+  A.lower()
+  B=input('Enter variable in denominator ')
+  B.lower()
+  if 'x' in A or 'y' in A:
+    A.replace('x',X)
+    A.replace('y', Y)
+  if 'x'in B or 'y' in B:
+    B.replace('x',X)
+    B.replace('y', Y)
+  
+
+# def derivative_of_x():
+
+#   return (xPower*(x**(xPower-1)))
+# def derivative_of_y():
+#   return(yPower*(y**(yPower-1)))
+
+# partial= function.replace('x',1)
+def partialx():
+  
+  
+    deri=(xPower*(x**(xPower-1)))
+    (A.replace('X','1')
+    
+    lol=float(A)/float(B)
+
+    
+    
+    return(abs((constant*lol* (deri))*xUncert))
+  
+def partialy():
+    hi=(yPower*(y**(yPower-1)))
+    print(B.replace('Y','1'))
+    
+    lol2=float(A)/float(B)
+    
+    
+    return(abs((constant*(lol2)*(hi))*yUncert))
+    
+print(partialx()+partialy())
+
+
+# hi=(xPower*(x**(xPower-1)))
+# print(hi)
+
+# print(6.07**-2)
+# function=input('Enter:')
+# function=function.replace('x',X)
+# function=function.replace('y',X)
+# if '/' in function:
+#   function.replace('/','{}')
+  
+# X=str(12.42)
+# Y=str(1.33)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# print('This is simple uncertainity calculator')
+
+# constant=float(input('Enter constant value:'))
+
+# x=float(input('Enter x value:'))
+
+# xUncertainity=float(input('Enter x uncertaintiy:'))
+
+# y=float(input('Enter y value: '))
+
+# yUncertainity= float(input('Enter y uncertainity:'))
+
+# another=input('Need another variable? Enter Y/N: ')
+
+# if another=='Y':
+
+#   z=float(input('Enter z value:'))
+
+#   zUncertainity=int(input('Enter z uncertaitnity'))
+
+#   zPower= int(input('Enter z exponent if none press enter:'))
+
+#   if len(zPower)==0:
+
+#     zPower=1
+  
+
+# print('What is the arithmetic in equation? enter (f for fraction, a for addition, s for subtraction, m for mulitplication')
+
+# arithmetic= input('Enter the arithmetic type:')
+
+# xPower= float(input('Enter x exponent if none press enter:'))
+
+# X=x**xPower
+# yPower=float(input('Enter y exponent if none press enter:'))
+# Y=y**yPower
+# def derivative(x):
+#   print(xPower*(x**(xPower-1)))
+# def derivative(y):
+#   print(yPower*(y**(yPower-1)))
+
+# if arithmetic =='f':
+#   numerator=input('which value is numerator in x or y or z or all:')
+#   if numerator =='x':
+#     print(abs((constant*(1/Y)*(derivative(x)))*xUncertainity)+abs((constant*(X)*(derivative(y))*yUncertainity)))
+
+
+
+
+
+
+
+
+# def fraction():
+#     while True:
+#       variable_in_numerator= input('Enter variables in numerator each tme igore exponent and arthmethic sign:')
+    
+#       variable_in_numerator= variable_in_numerator.lower()
+#       if len(variable_in_numerator)==0:
+#         break
+#     while True:
+#       variable_in_denomiator=input('Enter single variable in denomiator each time:')
+#       variable_in_denomiator=variable_in_denomiator.lower()
+#       if len(variable_in_denomiator)==0:
+#         break
+
+#     if 'x' in variable_in_numerator or 'x' in variable_in_denomiator :
+#       x=float(input('Enter x value:'))
+#       xPower= float(input('Enter x exponent :'))
+#       X= x**xPower
+#       print(X)
+
+
+#     if 'y' in variable_in_numerator or 'y' in variable_in_denomiator :
+#       y=float(input('Enter y value:'))
+#       yPower= float(input('Enter y exponent :'))
+#       Y= y**yPower
+#       print(Y)
+
+#     if 'x' in variable_in_numerator and 'y' in variable_in_numerator:
+#       print('f for fraction')
+#       operator=input('Enter operator between x and y:')
+#       if operator=='f':
+#            print((X/Y))
+
+
+#     def derivative_of_x():
+#       return (xPower*(x**(xPower-1)))
+#     def derivative_of_y():
+#       return(yPower*(y**(yPower-1)))
+   
+      
+      
+    
+#     print((X/Y))
+
+   
+
+
+# print(fraction())
